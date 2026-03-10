@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: node-app
+  template:
+    metadata:
+      Labels:
+        app: node-app
+    spec:
+    container:
+      name: node-app
+      image: johnvelan/devops-node-app
+      ports:
+        - containerPort: 3000
+
+      env:
+        - name: MONGO-URI
+          valueFrom:
+            secretKeyRef:
+              name: mongo-secret
+              key: mongo-uri
