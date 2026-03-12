@@ -1,13 +1,12 @@
-apiVersion: apps/v1
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: node-ingress
 
 spec:
   rules:
-    -host: devops-app.local
-
-    http:
+  -  host: devops-app.local
+     http:
       paths:
       - path: /
         pathType: Prefix
