@@ -1,0 +1,15 @@
+{
+    "title": "Node App Dashboard",
+    "panels": [
+        {
+            "type": "graph",
+            "title": "App Health",
+            "targets": [
+                {
+                    "expr": "up"
+                }
+            ]
+        }
+    ]
+     
+}

@@ -9,19 +9,21 @@ spec:
   selector:
     matchLabels:
       app: node-app
+
   template:
     metadata:
-      Labels:
+      labels:
         app: node-app
     spec:
-    container:
-      name: node-app
-      image: johnvelan/devops-node-app
-      ports:
+      containers:
+      - name: node-app
+        image: johnvelan/devops-node-app
+
+        ports:
         - containerPort: 3000
 
-      env:
-        - name: MONGO-URI
+        env:
+        - name: MONGO_URI
           valueFrom:
             secretKeyRef:
               name: mongo-secret
