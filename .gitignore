@@ -1,0 +1,10 @@
+app/.env
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform/
+*.tfstate
+*.tfstate.backup
+app/.env
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
